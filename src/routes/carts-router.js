@@ -22,7 +22,7 @@ router.get("/:cid", async (req, res) => {
         const cart = await CartModel.findById(cartId);
 
         if (!cart) {
-            console.log("No existe el carrito");
+            console.log("No existe el carrito" + cartId);
             return res.status(404).json({ error: "No se encuentra el carrito" });
         }
 

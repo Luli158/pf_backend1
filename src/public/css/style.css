@@ -1,97 +1,109 @@
-/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5; /* Fondo claro */
-    color: #333; /* Texto oscuro */
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Cabecera */
+
 h1 {
     text-align: center;
     font-size: 3rem;
-    color: #f1a800; /* Color amarillo Marolio */
+    color: #35bfc4;
     margin-top: 20px;
 }
 
-/* Contenedor de productos */
+
 .products-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Alinea los productos en fila y los distribuye */
-    gap: 20px; /* Espacio entre los productos */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
     margin-top: 20px;
-    padding: 0 15px;
 }
 
-/* Estilos de los productos */
-div.product {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+.product {
+    background: linear-gradient(145deg, #1e1e1e, #292929);
+    border-radius: 12px;
     padding: 20px;
     text-align: center;
-    max-width: 300px; /* Limita el ancho de cada producto */
-    flex: 1 1 300px; /* Hace que los productos se adapten al espacio disponible */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-div.product:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(82, 82, 82, 0.3);
 }
 
-/* Títulos de productos */
+
 h2 {
-    color: #d30000; /* Rojo Marolio */
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    color: #1c9fa3;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
 }
 
-/* Descripción y precio */
+
 p {
     font-size: 1rem;
-    margin: 10px 0;
+    margin: 5px 0;
+    color: #b3b3b3;
 }
 
-/* Botón de agregar al carrito */
+
 button {
-    background-color: #f1a800; /* Amarillo Marolio */
+    background: #35bfc4;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 18px;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #d98c00; /* Amarillo más oscuro en hover */
+    background: #c66afc;
+    transform: scale(1.05);
 }
 
-/* Paginación */
-a {
-    color: #d30000; /* Rojo Marolio */
-    text-decoration: none;
-    font-size: 1.2rem;
-    margin: 10px;
-}
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos de paginación */
-p {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #333;
-}
-
-/* Estilos de la paginación al pie de la página */
 .pagination {
-    text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.pagination a {
+    background: #ac44cc;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.pagination a:hover {
+    background: #24a9ad;
+}
+
+.pagination p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4fdde2;
 }

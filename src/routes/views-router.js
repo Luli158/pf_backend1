@@ -39,7 +39,7 @@ router.get("/products", async (req, res) => {
 });
 
 router.get("/carts/:cid", async (req, res) => {
-   const cartId = req.params.cid;
+   const cartId = parseInt(req.params.cid);
 
    try {
       const cart = await cartManager.getCartById(cartId);

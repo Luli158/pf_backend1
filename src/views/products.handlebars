@@ -1,23 +1,23 @@
-<h1>Productos</h1>
+<h1>PRODUCTOS</h1>
 
 <div class="products-container">
-   {{#each productos}}
+   {{#each products}}
    <div class="product">
       <h2>{{title}}</h2>
       <p>{{description}}</p>
-      <p>Precio: ${{price}}</p>
-      <p>Categoría: {{category}}</p>
-      <button>Agregar al carrito</button>
+      <p><strong>Precio:</strong> ${{price}}</p>
+      <p><strong>Categoría:</strong> {{category}}</p>
+      <button>🛒 Agregar al carrito</button>
    </div>
    {{/each}}
 </div>
 
 <div class="pagination">
    {{#if hasPrevPage}}
-      <a href="/products?page={{prevPage}}">Anterior</a>
+      <a href="/products?page={{prevPage}}">⬅ Anterior</a>
    {{/if}}
    <p>Página {{currentPage}} de {{totalPages}}</p>
    {{#if hasNextPage}}
-      <a href="/products?page={{nextPage}}">Siguiente</a>
+      <a href="/products?page={{nextPage}}">Siguiente ➡</a>
    {{/if}}
 </div>

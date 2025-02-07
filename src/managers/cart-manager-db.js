@@ -1,5 +1,6 @@
 import CartModel from "../models/cart-model.js";
 
+
 class CartManager {
     async createCart() {
         try {
@@ -11,19 +12,20 @@ class CartManager {
         }
     }
 
-    async getCartById(cartId) {
+    async getCarritoById(cartId) {
         try {
-            const cart = await CartModel.findById(cartId);
-            if (!cart) {
-                console.log("No existe un carrito con ese id");
+            const carrito = await CartModel.findById(cartId);
+            if (!carrito) {
+                console.log("No existe ese carrito con el id");
                 return null;
             }
 
-            return cart;
+            return carrito;
         } catch (error) {
-            console.log("Error al traer el carrito", error);
+            console.log("Error al traer el carrito, fijate bien lo que haces", error);
         }
     }
+
 
     async addProductCart(cartId, productId, quantity = 1) {
         try {
@@ -36,7 +38,6 @@ class CartManager {
                 cart.products.push({ product: productId, quantity });
             }
 
-            //Vamos a marcar la propiedad "products" como modificada antes de guardar: 
             cart.markModified("products");
 
             await cart.save();
