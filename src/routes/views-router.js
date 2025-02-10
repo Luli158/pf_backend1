@@ -39,7 +39,7 @@ router.get("/products", async (req, res) => {
 });
 
 router.get("/carts/:cid", async (req, res) => {
-   const cartId = parseInt(req.params.cid);
+   const cartId = req.params.cid;
 
    try {
       const cart = await cartManager.getCartById(cartId);
@@ -49,7 +49,7 @@ router.get("/carts/:cid", async (req, res) => {
          return res.status(404).json({ error: "Carrito no encontrado" });
       }
 
-      const productsCart = carrito.products.map(item => ({
+      const productsCart = cart.products.map(item => ({
          product: item.product.toObject(),
          quantity: item.quantity
       }));

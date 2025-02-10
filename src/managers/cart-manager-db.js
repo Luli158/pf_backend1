@@ -12,19 +12,18 @@ class CartManager {
         }
     }
 
-    async getCarritoById(cartId) {
+    async getCartById(cartId) {
         try {
-            const carrito = await CartModel.findById(cartId);
+            const carrito = await CartModel.findById(cartId).populate("products.product");
             if (!carrito) {
                 console.log("No existe ese carrito con el id");
                 return null;
             }
-
             return carrito;
         } catch (error) {
             console.log("Error al traer el carrito, fijate bien lo que haces", error);
         }
-    }
+    }    
 
 
     async addProductCart(cartId, productId, quantity = 1) {
